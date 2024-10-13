@@ -23,7 +23,7 @@ class playGame extends Phaser.Scene {
     }
 
     createReels() {
-        // Create a 3x3 grid for symbols
+        // Create a 3x3 grid for symbols Tukaj smo dodali coment
         this.reels = [];
 
         const startX = 330;
