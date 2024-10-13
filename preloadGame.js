@@ -3,9 +3,7 @@ class preloadGame extends Phaser.Scene{
       super("PreloadGame");
     }
     preload(){
-      // load all assets tile sprites
-
-      // load spritesheet
+      this.load.image("background", "images/background.jpg")
       
     }
     create(){

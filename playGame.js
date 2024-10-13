@@ -16,6 +16,7 @@ class playGame extends Phaser.Scene {
     }
 
     create() {
+        this.background = this.add.image(0,0, "background")
         // Set up the 3x3 grid for the slot machine
         this.createReels();
         this.createSpinButton();
@@ -107,7 +108,7 @@ class playGame extends Phaser.Scene {
         }
 
         // Display the new win/no-win message
-        this.winText = this.add.text(330, 400, message, { fontSize: "32px", color: message === "You Win!" ? "#00ff00" : "#ff0000" });
+        this.winText = this.add.text(330, 400, message, { fontSize: "32px", color: message === "You Win!" ? "#c9ff00" : "#0f00ff" });
     }
 
     // Method to clear text before the next spin
