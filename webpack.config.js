@@ -9,27 +9,32 @@ module.exports = {
     },
 
     externals: {
-        phaser: 'Phaser',  // This tells Webpack to use the global Phaser instance
+        phaser: 'Phaser',  
       },
 
     module: {
         rules: [
           {
-            test: /\.js$/,         // Apply this rule to .js files
+            test: /\.js$/,         
             exclude: /node_modules/,
             use: {
-              loader: 'babel-loader', // Use Babel for transpiling
+              loader: 'babel-loader', 
               options: {
-                presets: ['@babel/preset-env'], // Use the preset-env to support older browsers
+                presets: ['@babel/preset-env'], 
               },
             },
           },
+          {
+            test: /\.(png|jpe?g|gif)$/i,  
+            type: 'asset/resource',  
+        },
         ],
       },
     
       devServer: {
         static: path.resolve(__dirname, 'dist'),
-        open: true,   // Automatically open the browser
+        open: true,   
       },
+      devtool: 'source-map',
     mode: 'production',
 };

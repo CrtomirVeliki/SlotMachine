@@ -4,7 +4,7 @@ export default class preloadGame extends Phaser.Scene{
       super("PreloadGame");
     }
     preload(){
-      this.load.image("background", "../images/background.jpg")
+      
       
     }
     create(){

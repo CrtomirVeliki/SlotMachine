@@ -1,3 +1,9 @@
+import symbol1 from '../images/sedem.png';
+import symbol2 from '../images/banana.png';
+import symbol3 from '../images/lubenica.png';
+import symbol4 from '../images/limona.png';
+import symbol5 from '../images/bar.png';
+
 
 export default class playGame extends Phaser.Scene {
     constructor() {
@@ -7,16 +13,16 @@ export default class playGame extends Phaser.Scene {
 
     preload() {
         // Load symbols for the reels
-        this.load.image("symbol1", "../images/sedem.png");
-        this.load.image("symbol2", "../images/banana.png");
-        this.load.image("symbol3", "../images/lubenica.png");
-        this.load.image("symbol4", "../images/limona.png");
-        this.load.image("symbol5", "../images/bar.png");
+        this.load.image("symbol1", symbol1);
+        this.load.image("symbol2", symbol2);
+        this.load.image("symbol3", symbol3);
+        this.load.image("symbol4", symbol4);
+        this.load.image("symbol5", symbol5);
     }
 
     create() {
-        this.background = this.add.image(0,0, "background")
-        // Set up the 3x3 grid for the slot machine
+      
+        // Set up the 3x3 grid 
         this.createReels();
         this.createSpinButton();
     }
@@ -74,12 +80,12 @@ export default class playGame extends Phaser.Scene {
     checkWinCondition() {
         let win = false;
 
-        // Loop through all three rows
+        // Loop through rows
         for (let row = 0; row < 3; row++) {
             const firstSymbol = this.reels[row][0].texture.key;
             win = true;
 
-            // Check if all symbols in the current row match
+            // Check if symbols  match
             for (let col = 1; col < 3; col++) {
                 if (this.reels[row][col].texture.key !== firstSymbol) {
                     win = false;
@@ -87,7 +93,7 @@ export default class playGame extends Phaser.Scene {
                 }
             }
 
-            // If a win is found, exit the loop early
+            // If a win, exit the loop
             if (win) {
                 this.displayWinText("You Win!");
                 break;
@@ -99,9 +105,9 @@ export default class playGame extends Phaser.Scene {
         }
     }
 
-    // Method to display win/no-win text
+    // Display win/no-win text
     displayWinText(message) {
-        // Remove the previous win text if it exists
+        // Remove text if it exists
         if (this.winText) {
             this.winText.destroy();
         }
@@ -110,7 +116,7 @@ export default class playGame extends Phaser.Scene {
         this.winText = this.add.text(330, 400, message, { fontSize: "32px", color: message === "You Win!" ? "#c9ff00" : "#0f00ff" });
     }
 
-    // Method to clear text before the next spin
+    // Clear text before the next spin
     clearWinText() {
         if (this.winText) {
             this.winText.destroy();
