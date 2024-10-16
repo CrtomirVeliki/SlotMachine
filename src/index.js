@@ -1,3 +1,7 @@
+import playGame from './playGame';
+import preloadGame from './preloadGame';
+
+
 var game;
 window.onload = function(){
   let gameConfig = {

@@ -1,6 +1,5 @@
 
-
-class playGame extends Phaser.Scene {
+export default class playGame extends Phaser.Scene {
     constructor() {
         super("PlayGame" );
         this.winText = null;
@@ -8,11 +7,11 @@ class playGame extends Phaser.Scene {
 
     preload() {
         // Load symbols for the reels
-        this.load.image("symbol1", "images/sedem.png");
-        this.load.image("symbol2", "images/banana.png");
-        this.load.image("symbol3", "images/lubenica.png");
-        this.load.image("symbol4", "images/limona.png");
-        this.load.image("symbol5", "images/bar.png");
+        this.load.image("symbol1", "../images/sedem.png");
+        this.load.image("symbol2", "../images/banana.png");
+        this.load.image("symbol3", "../images/lubenica.png");
+        this.load.image("symbol4", "../images/limona.png");
+        this.load.image("symbol5", "../images/bar.png");
     }
 
     create() {
@@ -23,7 +22,7 @@ class playGame extends Phaser.Scene {
     }
 
     createReels() {
-        // Create a 3x3 grid for symbols Tukaj smo dodali
+        // Create a 3x3 grid for symbols
         this.reels = [];
 
         const startX = 330;
