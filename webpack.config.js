@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path')
 
 module.exports = {
@@ -30,11 +31,18 @@ module.exports = {
         },
         ],
       },
+      
+    devServer: {
+      static: path.resolve(__dirname, 'dist'),
+      open: true,   
+    },
     
-      devServer: {
-        static: path.resolve(__dirname, 'dist'),
-        open: true,   
-      },
-      devtool: 'source-map',
+    plugins:[
+      new HtmlWebpackPlugin({
+        template: './src/index.html',
+      }),
+    ],
+    
+    devtool: 'source-map',
     mode: 'production',
 };
