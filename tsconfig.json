@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist/",
+     "sourceMap": true,
+      "noImplicitAny": true,
+      "module": "commonjs",
+      "target": "es5",
+      "jsx": "react",
+      "allowJs": true,
+      "moduleResolution": "node",
+      "lib": ["es6", "dom", "dom.iterable", "scripthost"],
+    "typeRoots": ["./node_modules/phaser/types"],
+    "types": ["Phaser"]
+  }
+}

@@ -1,6 +1,6 @@
 import playGame from './playGame';
 import preloadGame from './preloadGame';
-
+import * as _ from 'lodash';
 
 var game;
 window.onload = function(){
